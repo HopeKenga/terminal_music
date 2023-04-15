@@ -23,5 +23,7 @@ def play_track(track_name):
     if results['tracks'] ['items'] :
         tracks_uri = results['tracks']['items'][0]['uri']
         sp.start_playback(uris=[tracks_uri])
-        
 
+#pause a song
+def pause_playback():
+    sp.pause_playback()
