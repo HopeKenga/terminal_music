@@ -31,4 +31,8 @@ def pause_playback():
 #resume a  song
 def resume_playback():
     sp.resume_playback()
+
+#skip to the next song
+def next_track():
+    sp.next_track()
     
