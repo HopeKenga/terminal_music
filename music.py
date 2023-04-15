@@ -27,3 +27,8 @@ def play_track(track_name):
 #pause a song
 def pause_playback():
     sp.pause_playback()
+
+#resume a  song
+def resume_playback():
+    sp.resume_playback()
+    
