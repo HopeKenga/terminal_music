@@ -35,4 +35,34 @@ def resume_playback():
 #skip to the next song
 def next_track():
     sp.next_track()
-    
+
+#Add a play button
+
+import tkinter as tk
+from threading import Thread
+
+class MusicPlayerGUI:
+    def __init__(self):
+        self.window = tk.Tk()
+        self.window.title("Music Player")
+        self.window.geometry('300x100')
+        self.track_name_entry = tk.Entry(self.window, width=30)
+        self.track_name_entry.pack(pady=10)
+        self.play_button = tk.Button(self.window, text="Play", command=self.play_track_thread)
+        self.play_button.pack(pady=10)
+
+    def play_track_thread(self):
+        # Run play_track in a separate thread to avoid blocking the GUI
+        Thread(target=self.play_track, args=(self.track_name_entry.get(),)).start()
+
+    def play_track(self, track_name):
+        play_track(track_name)   
+
+#start the GUI
+gui = MusicPlayerGUI()
+gui.window.mainloop()
+
+
+
+
+
